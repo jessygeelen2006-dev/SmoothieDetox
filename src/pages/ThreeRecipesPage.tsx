@@ -35,16 +35,13 @@ export default function ThreeRecipesPage() {
     <div className="min-h-screen bg-stone-50 font-sans text-stone-800 selection:bg-lime-200">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-center items-center">
           <div className="flex items-center gap-2">
             <div className="bg-lime-400 p-1.5 rounded-lg">
               <Leaf className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-lg tracking-tight text-stone-900">Smoothie Detox</span>
           </div>
-          <button className="bg-stone-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
-            Start Nu
-          </button>
         </div>
       </nav>
 
@@ -57,7 +54,7 @@ export default function ThreeRecipesPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-6 text-stone-900">
-              3 Virale Smoothies Die Je Vetverbranding <span className="italic text-lime-600">Direct Aanzetten.</span>
+              3 Krachtige Smoothies Die Je Vetverbranding <span className="italic text-lime-600">Direct Aanzetten.</span>
             </h1>
             <p className="text-xl text-stone-600 mb-8 max-w-lg mx-auto leading-relaxed">
               Voel je je opgeblazen of moe? <strong className="text-stone-800">Reset je metabolisme in 24 uur</strong> zonder honger te lijden.
