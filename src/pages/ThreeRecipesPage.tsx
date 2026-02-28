@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Leaf, CheckCircle, ArrowRight, Loader2 } from 'lucide-react';
+import { Leaf, CheckCircle, ArrowRight, Loader2, Mail } from 'lucide-react';
 
 export default function ThreeRecipesPage() {
   const [email, setEmail] = useState('');
@@ -57,27 +57,14 @@ export default function ThreeRecipesPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block px-3 py-1 bg-lime-100 text-lime-800 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-              Gratis Recepten
+              Gratis PDF Download
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-6 text-stone-900">
-              Ontdek 3 virale smoothie recepten waarmee je <span className="italic text-lime-600">direct vet verbrandt.</span>
+            <h1 className="text-3xl md:text-5xl font-serif font-medium leading-[1.1] mb-4 text-stone-900">
+              3 Virale Smoothies die je <span className="italic text-lime-600">vetverbranding aanzetten.</span>
             </h1>
-            <p className="text-lg text-stone-600 mb-8 leading-relaxed max-w-xl mx-auto">
-              Krijg direct toegang tot de populairste recepten uit ons boek en start vandaag nog met het ontgiften van je lichaam.
+            <p className="text-lg text-stone-600 mb-8 max-w-lg mx-auto">
+              Geen honger, wel energie. Download de gratis recepten en start morgen met je detox.
             </p>
-            
-            <ul className="text-left max-w-md mx-auto mb-8 space-y-3">
-              {[
-                "Verlies je opgeblazen gevoel in slechts 24 uur",
-                "Geen honger, wel energie: De geheime ingrediëntenmix",
-                "Klaar in 5 minuten met simpele supermarkt-producten"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-stone-700">
-                  <CheckCircle className="w-5 h-5 text-lime-500 flex-shrink-0 mt-0.5" />
-                  <span className="font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
             
             {status === 'success' ? (
               <div className="bg-lime-100 border border-lime-200 text-lime-800 px-6 py-4 rounded-2xl mb-8 max-w-lg mx-auto">
@@ -88,29 +75,51 @@ export default function ThreeRecipesPage() {
                 <p className="text-sm mt-1">We hebben de recepten naar je gemaild.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8 max-w-lg mx-auto w-full">
-                <input 
-                  type="email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Vul je e-mailadres in..." 
-                  className="w-full px-6 py-4 rounded-2xl border border-stone-200 bg-white text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent shadow-sm disabled:opacity-50"
-                  required
-                  disabled={status === 'loading'}
-                />
-                <button 
-                  type="submit" 
-                  disabled={status === 'loading'}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-lime-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-lime-600 transition-all shadow-lg shadow-lime-200 hover:shadow-lime-300 transform hover:-translate-y-1 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {status === 'loading' ? (
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                  ) : (
-                    <>Ga Verder <ArrowRight className="w-5 h-5" /></>
-                  )}
-                </button>
-              </form>
+              <div className="bg-white p-2 rounded-2xl shadow-lg border border-stone-100 max-w-md mx-auto mb-8">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-2">
+                  <div className="relative w-full">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <Mail className="h-4 w-4 text-stone-400" />
+                    </div>
+                    <input 
+                      type="email" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Jouw e-mailadres" 
+                      className="w-full pl-9 pr-4 py-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-lime-500 focus:bg-white focus:ring-0 transition-all text-sm"
+                      required
+                      disabled={status === 'loading'}
+                    />
+                  </div>
+                  <button 
+                    type="submit" 
+                    disabled={status === 'loading'}
+                    className="w-full sm:w-auto bg-stone-900 text-white px-6 py-3 rounded-xl font-medium text-sm hover:bg-stone-800 transition-colors whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    {status === 'loading' ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <>Stuur mij de recepten</>
+                    )}
+                  </button>
+                </form>
+              </div>
             )}
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-stone-500 mb-10">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-lime-500" />
+                <span>Klaar in 5 minuten</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <CheckCircle className="w-4 h-4 text-lime-500" />
+                 <span>100% Natuurlijk</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <CheckCircle className="w-4 h-4 text-lime-500" />
+                 <span>Direct in je mailbox</span>
+              </div>
+            </div>
             
             {status === 'error' && (
               <p className="text-red-500 text-sm mb-6">Er ging iets mis. Probeer het later opnieuw.</p>
@@ -160,9 +169,16 @@ export default function ThreeRecipesPage() {
       {/* Footer */}
       <footer className="bg-stone-900 text-stone-400 py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2 text-white">
-            <Leaf className="w-5 h-5" />
-            <span className="font-bold text-lg">Smoothie Detox</span>
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <div className="flex items-center gap-2 text-white">
+              <Leaf className="w-5 h-5" />
+              <span className="font-bold text-lg">Smoothie Detox</span>
+            </div>
+            <div className="text-sm flex flex-col items-center md:items-start gap-1">
+              <a href="mailto:info@portomedia.nl" className="hover:text-white transition-colors">info@portomedia.nl</a>
+              <a href="tel:0643441206" className="hover:text-white transition-colors">06-43441206</a>
+              <span>KvK: 99880725</span>
+            </div>
           </div>
           <div className="text-sm">
             &copy; {new Date().getFullYear()} De Smoothie Detox. Alle rechten voorbehouden.

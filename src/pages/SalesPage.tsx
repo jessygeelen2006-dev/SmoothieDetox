@@ -193,9 +193,16 @@ export default function SalesPage() {
       {/* Footer */}
       <footer className="bg-stone-900 text-stone-400 py-12 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2 text-white">
-            <Leaf className="w-5 h-5" />
-            <span className="font-bold text-lg">Smoothie Detox</span>
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <div className="flex items-center gap-2 text-white">
+              <Leaf className="w-5 h-5" />
+              <span className="font-bold text-lg">Smoothie Detox</span>
+            </div>
+            <div className="text-sm flex flex-col items-center md:items-start gap-1">
+              <a href="mailto:info@portomedia.nl" className="hover:text-white transition-colors">info@portomedia.nl</a>
+              <a href="tel:0643441206" className="hover:text-white transition-colors">06-43441206</a>
+              <span>KvK: 99880725</span>
+            </div>
           </div>
           <div className="text-sm">
             &copy; {new Date().getFullYear()} De Smoothie Detox. Alle rechten voorbehouden.
