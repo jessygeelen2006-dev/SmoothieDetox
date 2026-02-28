@@ -46,26 +46,24 @@ export default function ThreeRecipesPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 md:pt-32 pb-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-6 text-stone-900">
+            <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-4 text-stone-900">
               3 Krachtige Smoothies Die Je Vetverbranding <span className="italic text-lime-600">Direct Aanzetten.</span>
             </h1>
-            <p className="text-xl text-stone-600 mb-8 max-w-lg mx-auto leading-relaxed">
+            <p className="text-xl text-stone-600 mb-6 max-w-lg mx-auto leading-relaxed">
               Voel je je opgeblazen of moe? <strong className="text-stone-800">Reset je metabolisme in 24 uur</strong> zonder honger te lijden.
             </p>
-
-
 
             <p className="text-sm font-bold text-stone-500 uppercase tracking-wider mb-4">📩 Ontvang nu gratis je recepten:</p>
             
             {status === 'success' ? (
-              <div className="bg-lime-100 border border-lime-200 text-lime-800 px-6 py-4 rounded-2xl mb-8 max-w-lg mx-auto">
+              <div className="bg-lime-100 border border-lime-200 text-lime-800 px-6 py-4 rounded-2xl mb-6 max-w-lg mx-auto">
                 <p className="font-bold flex items-center justify-center gap-2">
                   <CheckCircle className="w-5 h-5" />
                   Bedankt! Check je inbox.
@@ -73,7 +71,7 @@ export default function ThreeRecipesPage() {
                 <p className="text-sm mt-1">We hebben de recepten naar je gemaild.</p>
               </div>
             ) : (
-              <div className="bg-white p-2 rounded-2xl shadow-lg border border-stone-100 max-w-md mx-auto mb-8">
+              <div className="bg-white p-2 rounded-2xl shadow-lg border border-stone-100 max-w-md mx-auto mb-6">
                 <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-2">
                   <div className="relative w-full">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -108,37 +106,34 @@ export default function ThreeRecipesPage() {
               <p className="text-red-500 text-sm mb-6">Er ging iets mis. Probeer het later opnieuw.</p>
             )}
             
-
+            <div className="mt-8">
+               <h3 className="text-xl font-serif text-stone-900 mb-4">
+                Honderden vrouwen vielen kilo's af
+              </h3>
+              <div className="flex justify-center gap-4 md:gap-8">
+                <div className="w-1/2 max-w-xs rounded-2xl overflow-hidden shadow-lg rotate-[-2deg] hover:rotate-0 transition-transform duration-300 bg-white p-2">
+                  <img 
+                    src="https://i.ibb.co/kgH4cV5V/a982e86c-6a36-44a8-8fff-4db40e8f2545.jpg" 
+                    alt="Resultaat 1" 
+                    className="w-full h-auto rounded-xl object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="w-1/2 max-w-xs rounded-2xl overflow-hidden shadow-lg rotate-[2deg] hover:rotate-0 transition-transform duration-300 bg-white p-2">
+                  <img 
+                    src="https://i.ibb.co/qMfFds89/9bd31f2e-e644-4eb5-9fe2-fa212c4bed84.jpg" 
+                    alt="Resultaat 2" 
+                    className="w-full h-auto rounded-xl object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section className="py-16 bg-stone-50 border-y border-stone-100">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-2xl font-serif text-stone-900 mb-8">
-            Honderden vrouwen vielen kilo's af
-          </h3>
-          <div className="flex justify-center gap-4 md:gap-8">
-            <div className="w-1/2 max-w-xs rounded-2xl overflow-hidden shadow-lg rotate-[-2deg] hover:rotate-0 transition-transform duration-300 bg-white p-2">
-              <img 
-                src="https://i.ibb.co/kgH4cV5V/a982e86c-6a36-44a8-8fff-4db40e8f2545.jpg" 
-                alt="Resultaat 1" 
-                className="w-full h-auto rounded-xl object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="w-1/2 max-w-xs rounded-2xl overflow-hidden shadow-lg rotate-[2deg] hover:rotate-0 transition-transform duration-300 bg-white p-2">
-              <img 
-                src="https://i.ibb.co/qMfFds89/9bd31f2e-e644-4eb5-9fe2-fa212c4bed84.jpg" 
-                alt="Resultaat 2" 
-                className="w-full h-auto rounded-xl object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Footer */}
       <footer className="bg-stone-900 text-stone-400 py-12 px-6">
