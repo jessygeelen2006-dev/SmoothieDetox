@@ -126,9 +126,15 @@ export default function SalesPage() {
       {/* What's Inside */}
       <section className="py-20 px-6 bg-lime-50">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <div className="aspect-[4/3] rounded-3xl shadow-xl rotate-2 hover:rotate-0 transition-transform duration-500 bg-white flex items-center justify-center border border-lime-100">
-               <Droplets className="w-24 h-24 text-lime-200" />
+          <div className="order-2 md:order-1 flex justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-lime-200/20 blur-3xl rounded-full transform scale-90 translate-y-4"></div>
+              <img 
+                src="https://i.ibb.co/kVsSZ55x/grok-image-966a5c19-a89a-4cfa-a8bc-adc4c0007baf-removebg-preview-1.png" 
+                alt="Smoothie Detox Receptenboek" 
+                className="relative w-full max-w-md h-auto drop-shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
           <div className="order-1 md:order-2">
