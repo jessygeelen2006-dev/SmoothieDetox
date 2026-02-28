@@ -60,20 +60,7 @@ export default function ThreeRecipesPage() {
               Voel je je opgeblazen of moe? <strong className="text-stone-800">Reset je metabolisme in 24 uur</strong> zonder honger te lijden.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-stone-500 mb-8">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-lime-500" />
-                <span>Klaar in 5 minuten</span>
-              </div>
-              <div className="flex items-center gap-2">
-                 <CheckCircle className="w-4 h-4 text-lime-500" />
-                 <span>100% Natuurlijk</span>
-              </div>
-              <div className="flex items-center gap-2">
-                 <CheckCircle className="w-4 h-4 text-lime-500" />
-                 <span>Direct in je mailbox</span>
-              </div>
-            </div>
+
 
             <p className="text-sm font-bold text-stone-500 uppercase tracking-wider mb-4">📩 Ontvang nu gratis je recepten:</p>
             
@@ -121,17 +108,7 @@ export default function ThreeRecipesPage() {
               <p className="text-red-500 text-sm mb-6">Er ging iets mis. Probeer het later opnieuw.</p>
             )}
             
-            <div className="flex items-center justify-center gap-4 text-sm text-stone-500">
-              <div className="flex -space-x-2">
-                 <div className="w-8 h-8 rounded-full border-2 border-white bg-lime-100 flex items-center justify-center text-lime-700 text-xs font-bold">JD</div>
-                 <div className="w-8 h-8 rounded-full border-2 border-white bg-blue-100 flex items-center justify-center text-blue-700 text-xs font-bold">MK</div>
-                 <div className="w-8 h-8 rounded-full border-2 border-white bg-orange-100 flex items-center justify-center text-orange-700 text-xs font-bold">AS</div>
-              </div>
-              <div className="text-left">
-                <p className="font-bold text-stone-800">💌 Al door 1.200+ mensen gedownload</p>
-                <p className="text-xs">Honderden vrouwen vielen kilo’s af – start morgen al!</p>
-              </div>
-            </div>
+
           </motion.div>
         </div>
       </section>

@@ -6,16 +6,13 @@ export default function SalesPage() {
     <div className="min-h-screen bg-stone-50 font-sans text-stone-800 selection:bg-lime-200">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-center items-center">
           <div className="flex items-center gap-2">
             <div className="bg-lime-400 p-1.5 rounded-lg">
               <Leaf className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-lg tracking-tight text-stone-900">Smoothie Detox</span>
           </div>
-          <a href="https://portomedia.nl/checkout/smoothiedetox" className="bg-stone-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
-            Koop Nu
-          </a>
         </div>
       </nav>
 
@@ -37,10 +34,9 @@ export default function SalesPage() {
               Ontdek 20 heerlijke smoothie recepten die speciaal zijn samengesteld om je te helpen afvallen en je lichaam te ontgiften.
             </p>
             
-            <div className="flex items-center justify-center gap-6 mb-10">
-              <div className="text-3xl font-bold text-stone-900">€9,95</div>
+            <div className="flex items-center justify-center mb-10">
               <a href="https://portomedia.nl/checkout/smoothiedetox" className="flex items-center gap-2 bg-lime-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-lime-600 transition-all shadow-lg shadow-lime-200 hover:shadow-lime-300 transform hover:-translate-y-1">
-                Direct Toegang <ArrowRight className="w-5 h-5" />
+                Start Direct Met Afvallen <ArrowRight className="w-5 h-5" />
               </a>
             </div>
 
@@ -150,9 +146,9 @@ export default function SalesPage() {
               ))}
             </ul>
             <div className="mt-10">
-              <button className="bg-stone-900 text-white px-8 py-3 rounded-xl font-medium hover:bg-stone-800 transition-colors">
-                Bestel nu voor €9,95
-              </button>
+              <a href="https://portomedia.nl/checkout/smoothiedetox" className="inline-block bg-stone-900 text-white px-8 py-3 rounded-xl font-medium hover:bg-stone-800 transition-colors">
+                Bestel het receptenboek
+              </a>
             </div>
           </div>
         </div>
@@ -178,11 +174,7 @@ export default function SalesPage() {
           </div>
           
           <div className="bg-white p-8 rounded-3xl shadow-xl border border-lime-200 inline-block w-full max-w-lg">
-             <p className="text-stone-500 mb-4 font-medium">Zeg je 3x JA? Start dan direct.</p>
-             <div className="flex items-center justify-center gap-4 mb-6">
-                <span className="text-4xl font-bold text-stone-900">€9,95</span>
-                <span className="text-stone-400 line-through text-xl">€27,00</span>
-             </div>
+             <p className="text-stone-500 mb-6 font-medium">Zeg je 3x JA? Start dan direct.</p>
              <a href="https://portomedia.nl/checkout/smoothiedetox" className="w-full bg-lime-500 text-white px-8 py-4 rounded-2xl font-bold text-xl hover:bg-lime-600 transition-all shadow-lg shadow-lime-200 hover:shadow-lime-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
                Ja, ik wil dit nu! <ArrowRight className="w-6 h-6" />
              </a>
