@@ -41,7 +41,7 @@ export default function SalesPage() {
             
             <div className="flex items-center justify-center mb-10">
               <a href="https://portomedia.nl/checkout/smoothiedetox" className="flex items-center gap-2 bg-lime-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-lime-600 transition-all shadow-lg shadow-lime-200 hover:shadow-lime-300 transform hover:-translate-y-1">
-                Ja, ik wil starten! <ArrowRight className="w-5 h-5" />
+                Ik wil dit receptenboek! <ArrowRight className="w-5 h-5" />
               </a>
             </div>
 
@@ -170,14 +170,14 @@ export default function SalesPage() {
 
       {/* What's Inside */}
       <section className="py-20 px-6 bg-lime-50">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1 flex justify-center">
-            <div className="relative">
+            <div className="relative w-full">
               <div className="absolute inset-0 bg-lime-200/20 blur-3xl rounded-full transform scale-90 translate-y-4"></div>
               <img 
                 src="https://i.ibb.co/kVsSZ55x/grok-image-966a5c19-a89a-4cfa-a8bc-adc4c0007baf-removebg-preview-1.png" 
                 alt="Smoothie Detox Receptenboek" 
-                className="relative w-full max-w-xl h-auto drop-shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
+                className="relative w-full h-auto drop-shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -200,7 +200,7 @@ export default function SalesPage() {
             </ul>
             <div className="mt-10">
               <a href="https://portomedia.nl/checkout/smoothiedetox" className="inline-block bg-stone-900 text-white px-8 py-3 rounded-xl font-medium hover:bg-stone-800 transition-colors">
-                Ja, ik wil starten!
+                Ik wil dit receptenboek!
               </a>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function SalesPage() {
              <p className="text-stone-800 font-bold text-xl mb-6">Start vandaag met afvallen en voel je fantastisch</p>
              <p className="text-stone-600 mb-6">Klik op de knop hieronder en begin direct met je detox:</p>
              <a href="https://portomedia.nl/checkout/smoothiedetox" className="w-full bg-lime-500 text-white px-8 py-4 rounded-2xl font-bold text-xl hover:bg-lime-600 transition-all shadow-lg shadow-lime-200 hover:shadow-lime-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
-               Ja, ik wil starten! <ArrowRight className="w-6 h-6" />
+               Ik wil dit receptenboek! <ArrowRight className="w-6 h-6" />
              </a>
           </div>
         </div>
