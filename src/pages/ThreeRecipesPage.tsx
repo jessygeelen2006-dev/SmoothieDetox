@@ -37,10 +37,12 @@ export default function ThreeRecipesPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-center items-center">
           <div className="flex items-center gap-2">
-            <div className="bg-lime-400 p-1.5 rounded-lg">
-              <Leaf className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-lg tracking-tight text-stone-900">Smoothie Detox</span>
+            <img 
+              src="https://i.ibb.co/ZpBRMcdB/logo.jpg" 
+              alt="Smoothie Detox" 
+              className="h-12 w-auto"
+              referrerPolicy="no-referrer"
+            />
           </div>
         </div>
       </nav>
@@ -140,8 +142,12 @@ export default function ThreeRecipesPage() {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-2 text-white">
-              <Leaf className="w-5 h-5" />
-              <span className="font-bold text-lg">Smoothie Detox</span>
+              <img 
+                src="https://i.ibb.co/ZpBRMcdB/logo.jpg" 
+                alt="Smoothie Detox" 
+                className="h-10 w-auto"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div className="text-sm flex flex-col items-center md:items-start gap-1">
               <a href="mailto:info@portomedia.nl" className="hover:text-white transition-colors">info@portomedia.nl</a>
