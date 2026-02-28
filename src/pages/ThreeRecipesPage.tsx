@@ -56,15 +56,33 @@ export default function ThreeRecipesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block px-3 py-1 bg-lime-100 text-lime-800 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-              Gratis PDF Download
-            </div>
             <h1 className="text-3xl md:text-5xl font-serif font-medium leading-[1.1] mb-4 text-stone-900">
-              3 Virale Smoothies die je <span className="italic text-lime-600">vetverbranding aanzetten.</span>
+              🍹 Smoothie Detox – Start Morgen Met <span className="italic text-lime-600">Energie & Vetverlies</span>
             </h1>
-            <p className="text-lg text-stone-600 mb-8 max-w-lg mx-auto">
-              Geen honger, wel energie. Download de gratis recepten en start morgen met je detox.
+            <p className="text-lg text-stone-600 mb-6 max-w-lg mx-auto">
+              Voel je futloos? Kilo’s die blijven plakken? Elke dag moe, maar geen zin in ingewikkelde diëten?
             </p>
+            <p className="text-lg text-stone-800 font-medium mb-8 max-w-lg mx-auto">
+              Wij hebben de oplossing: <br/>
+              3 virale Smoothies die je metabolisme een boost geven – geen honger, wél energie.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-stone-500 mb-8">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-lime-500" />
+                <span>Klaar in 5 minuten</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <CheckCircle className="w-4 h-4 text-lime-500" />
+                 <span>100% Natuurlijk</span>
+              </div>
+              <div className="flex items-center gap-2">
+                 <CheckCircle className="w-4 h-4 text-lime-500" />
+                 <span>Direct in je mailbox</span>
+              </div>
+            </div>
+
+            <p className="text-sm font-bold text-stone-500 uppercase tracking-wider mb-4">📩 Ontvang nu gratis je recepten:</p>
             
             {status === 'success' ? (
               <div className="bg-lime-100 border border-lime-200 text-lime-800 px-6 py-4 rounded-2xl mb-8 max-w-lg mx-auto">
@@ -99,41 +117,27 @@ export default function ThreeRecipesPage() {
                     {status === 'loading' ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
                     ) : (
-                      <>Stuur mij de recepten</>
+                      <>Stuur mij de recepten!</>
                     )}
                   </button>
                 </form>
               </div>
             )}
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-stone-500 mb-10">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-lime-500" />
-                <span>Klaar in 5 minuten</span>
-              </div>
-              <div className="flex items-center gap-2">
-                 <CheckCircle className="w-4 h-4 text-lime-500" />
-                 <span>100% Natuurlijk</span>
-              </div>
-              <div className="flex items-center gap-2">
-                 <CheckCircle className="w-4 h-4 text-lime-500" />
-                 <span>Direct in je mailbox</span>
-              </div>
-            </div>
-            
             {status === 'error' && (
               <p className="text-red-500 text-sm mb-6">Er ging iets mis. Probeer het later opnieuw.</p>
             )}
-
-            <p className="text-sm text-stone-400 mb-10">Ontvang direct toegang tot de introductie.</p>
-
+            
             <div className="flex items-center justify-center gap-4 text-sm text-stone-500">
               <div className="flex -space-x-2">
                  <div className="w-8 h-8 rounded-full border-2 border-white bg-lime-100 flex items-center justify-center text-lime-700 text-xs font-bold">JD</div>
                  <div className="w-8 h-8 rounded-full border-2 border-white bg-blue-100 flex items-center justify-center text-blue-700 text-xs font-bold">MK</div>
                  <div className="w-8 h-8 rounded-full border-2 border-white bg-orange-100 flex items-center justify-center text-orange-700 text-xs font-bold">AS</div>
               </div>
-              <p>Al door 1.200+ mensen gedownload</p>
+              <div className="text-left">
+                <p className="font-bold text-stone-800">💌 Al door 1.200+ mensen gedownload</p>
+                <p className="text-xs">Honderden vrouwen vielen kilo’s af – start morgen al!</p>
+              </div>
             </div>
           </motion.div>
         </div>
