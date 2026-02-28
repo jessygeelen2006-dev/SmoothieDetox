@@ -56,15 +56,11 @@ export default function ThreeRecipesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl md:text-5xl font-serif font-medium leading-[1.1] mb-4 text-stone-900">
-              🍹 Smoothie Detox – Start Morgen Met <span className="italic text-lime-600">Energie & Vetverlies</span>
+            <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-6 text-stone-900">
+              3 Virale Smoothies Die Je Vetverbranding <span className="italic text-lime-600">Direct Aanzetten.</span>
             </h1>
-            <p className="text-lg text-stone-600 mb-6 max-w-lg mx-auto">
-              Voel je futloos? Kilo’s die blijven plakken? Elke dag moe, maar geen zin in ingewikkelde diëten?
-            </p>
-            <p className="text-lg text-stone-800 font-medium mb-8 max-w-lg mx-auto">
-              Wij hebben de oplossing: <br/>
-              3 virale Smoothies die je metabolisme een boost geven – geen honger, wél energie.
+            <p className="text-xl text-stone-600 mb-8 max-w-lg mx-auto leading-relaxed">
+              Voel je je opgeblazen of moe? <strong className="text-stone-800">Reset je metabolisme in 24 uur</strong> zonder honger te lijden.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-stone-500 mb-8">
