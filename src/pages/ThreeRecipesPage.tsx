@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Leaf, CheckCircle, ArrowRight, Loader2, Mail } from 'lucide-react';
 
@@ -32,7 +32,7 @@ export default function ThreeRecipesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50 font-sans text-stone-800 selection:bg-lime-200">
+    <div className="min-h-screen bg-stone-50 font-sans text-stone-800 selection:bg-primary-200">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-center items-center">
@@ -56,7 +56,7 @@ export default function ThreeRecipesPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-4 text-stone-900">
-              3 Krachtige Smoothies Die Je Vetverbranding <span className="italic text-lime-600">Direct Aanzetten.</span>
+              3 Krachtige Smoothies Die Je Vetverbranding <span className="italic text-primary-600">Direct Aanzetten.</span>
             </h1>
             <p className="text-xl text-stone-600 mb-6 max-w-lg mx-auto leading-relaxed">
               Voel je je opgeblazen of moe? <strong className="text-stone-800">Reset je metabolisme in 24 uur</strong> zonder honger te lijden.
@@ -65,7 +65,7 @@ export default function ThreeRecipesPage() {
             <p className="text-sm font-bold text-stone-500 uppercase tracking-wider mb-4">📩 Ontvang nu gratis je recepten:</p>
             
             {status === 'success' ? (
-              <div className="bg-lime-100 border border-lime-200 text-lime-800 px-6 py-4 rounded-2xl mb-6 max-w-lg mx-auto">
+              <div className="bg-primary-100 border border-primary-200 text-primary-800 px-6 py-4 rounded-2xl mb-6 max-w-lg mx-auto">
                 <p className="font-bold flex items-center justify-center gap-2">
                   <CheckCircle className="w-5 h-5" />
                   Bedankt! Check je inbox.
@@ -84,7 +84,7 @@ export default function ThreeRecipesPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Jouw e-mailadres" 
-                      className="w-full pl-9 pr-4 py-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-lime-500 focus:bg-white focus:ring-0 transition-all text-sm"
+                      className="w-full pl-9 pr-4 py-3 rounded-xl border border-stone-200 bg-stone-50 text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-primary-500 focus:bg-white focus:ring-0 transition-all text-sm"
                       required
                       disabled={status === 'loading'}
                     />
