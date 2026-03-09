@@ -27,7 +27,7 @@ export default function SalesPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-              <Clock className="w-4 h-4" /> Start: 6 maart
+              <Clock className="w-4 h-4" /> Start: 14 maart
             </div>
             <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-6 text-stone-900">
               🚀 Reset je Metabolisme in 7 Dagen
@@ -41,7 +41,7 @@ export default function SalesPage() {
             
             <div className="flex items-center justify-center mb-10">
               <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-                Ja, ik wil mijn plek voor 6 maart! <ArrowRight className="w-5 h-5" />
+                Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
               </a>
             </div>
 
@@ -117,7 +117,7 @@ export default function SalesPage() {
             
             <div className="mt-10 text-center">
               <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-                Ja, ik wil mijn plek voor 6 maart! <ArrowRight className="w-5 h-5" />
+                Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -242,7 +242,7 @@ export default function SalesPage() {
           <div className="mt-12 text-center">
             <p className="text-2xl font-serif italic text-stone-700 mb-10">"Dit is geen quick fix. Dit is een reset voor je lichaam."</p>
             <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-              Ja, ik wil mijn plek voor 6 maart! <ArrowRight className="w-5 h-5" />
+              Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -282,7 +282,7 @@ export default function SalesPage() {
           
           <div className="mt-12 text-center">
             <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-              Ja, ik wil mijn plek voor 6 maart! <ArrowRight className="w-5 h-5" />
+              Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -293,14 +293,14 @@ export default function SalesPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="mb-12">
             <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full font-bold mb-6">
-              <Clock className="w-5 h-5" /> Start 6 maart – de deuren sluiten daarna
+              <Clock className="w-5 h-5" /> Start 14 maart – de deuren sluiten daarna
             </div>
             <h2 className="text-3xl font-serif font-medium mb-6 text-stone-900">Dit is een begeleide start, dus geen doorlopende instroom.</h2>
             <p className="text-lg text-stone-600">Wil je echt mee? Dan is dit je moment.</p>
           </div>
 
           <div className="bg-stone-900 text-white p-8 md:p-12 rounded-3xl shadow-xl mb-12">
-            <h3 className="text-2xl font-bold mb-6">Reserveer mijn plek voor 6 maart</h3>
+            <h3 className="text-2xl font-bold mb-6">Reserveer mijn plek voor 14 maart</h3>
             <div className="space-y-4 mb-8 text-stone-300">
               <p>Over 7 dagen kun je:</p>
               <div className="grid md:grid-cols-2 gap-4 text-left">
@@ -315,7 +315,7 @@ export default function SalesPage() {
               </div>
             </div>
             <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="w-full block bg-primary-500 text-white px-8 py-4 rounded-2xl font-bold text-xl hover:bg-primary-600 transition-all shadow-lg shadow-primary-900/20 hover:shadow-primary-900/40 transform hover:-translate-y-1">
-              Ja, ik start 6 maart met het 7-Daagse Smoothie Dieet
+              Ja, ik start 14 maart met het 7-Daagse Smoothie Dieet
             </a>
           </div>
 
