@@ -40,7 +40,7 @@ export default function SalesPage() {
             </p>
             
             <div className="flex items-center justify-center mb-10">
-              <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
+              <a href="/checkout" className="flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
                 Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
               </a>
             </div>
@@ -116,7 +116,7 @@ export default function SalesPage() {
             </div>
             
             <div className="mt-10 text-center">
-              <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
+              <a href="/checkout" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
                 Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
               </a>
             </div>
@@ -241,7 +241,7 @@ export default function SalesPage() {
           </div>
           <div className="mt-12 text-center">
             <p className="text-2xl font-serif italic text-stone-700 mb-10">"Dit is geen quick fix. Dit is een reset voor je lichaam."</p>
-            <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
+            <a href="/checkout" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
               Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
             </a>
           </div>
@@ -281,7 +281,7 @@ export default function SalesPage() {
           </div>
           
           <div className="mt-12 text-center">
-            <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
+            <a href="/checkout" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
               Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
             </a>
           </div>
@@ -314,7 +314,7 @@ export default function SalesPage() {
                 </div>
               </div>
             </div>
-            <a href="https://portomedia.nl/checkout/smoothiedetox-challenge" className="w-full block bg-primary-500 text-white px-8 py-4 rounded-2xl font-bold text-xl hover:bg-primary-600 transition-all shadow-lg shadow-primary-900/20 hover:shadow-primary-900/40 transform hover:-translate-y-1">
+            <a href="/checkout" className="w-full block bg-primary-500 text-white px-8 py-4 rounded-2xl font-bold text-xl hover:bg-primary-600 transition-all shadow-lg shadow-primary-900/20 hover:shadow-primary-900/40 transform hover:-translate-y-1">
               Ja, ik start 14 maart met het 7-Daagse Smoothie Dieet
             </a>
           </div>
