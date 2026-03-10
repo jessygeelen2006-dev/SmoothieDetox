@@ -29,7 +29,14 @@ export default function CheckoutPage() {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      let result;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        throw new Error(`Server gaf een ongeldig antwoord: ${text}`);
+      }
 
       if (!response.ok) {
         throw new Error(result.error || 'Er is iets misgegaan bij het aanmaken van de betaling.');
@@ -37,6 +44,8 @@ export default function CheckoutPage() {
 
       if (result.checkoutUrl) {
         window.location.href = result.checkoutUrl;
+      } else {
+        throw new Error('Geen checkout URL ontvangen van de server.');
       }
     } catch (err: any) {
       setError(err.message);

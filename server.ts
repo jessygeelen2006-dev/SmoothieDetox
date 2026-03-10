@@ -68,13 +68,15 @@ async function startServer() {
 
       const mollieClient = createMollieClient({ apiKey });
 
+      const baseUrl = process.env.APP_URL || `${req.protocol}://${req.get("host")}`;
+
       const payment = await mollieClient.payments.create({
         amount: {
           currency: "EUR",
           value: "37.00",
         },
         description: "7-Daagse Smoothie Challenge",
-        redirectUrl: `${req.protocol}://${req.get("host")}/success`,
+        redirectUrl: `${baseUrl}/success`,
         method: method === "ideal" ? "ideal" : "bancontact",
         metadata: {
           firstName,
@@ -86,7 +88,7 @@ async function startServer() {
       res.json({ checkoutUrl: payment._links.checkout?.href });
     } catch (error: any) {
       console.error("Payment creation failed:", error);
-      res.status(500).json({ error: error.message });
+      res.status(400).json({ error: error.message || "Er is een onbekende fout opgetreden bij het aanmaken van de betaling." });
     }
   });
 
