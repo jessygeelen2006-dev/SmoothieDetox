@@ -59,7 +59,7 @@ async function startServer() {
 
   app.post("/api/create-payment", async (req, res) => {
     try {
-      const { firstName, lastName, email, method } = req.body;
+      const { firstName, lastName, email, method, discountCode } = req.body;
       const apiKey = process.env.MOLLIE_API_KEY;
 
       const baseUrl = process.env.APP_URL || `${req.protocol}://${req.get("host")}`;
@@ -72,10 +72,12 @@ async function startServer() {
 
       const mollieClient = createMollieClient({ apiKey });
 
+      const amountValue = discountCode === 'MANGO' ? "90.00" : "97.00";
+
       const payment = await mollieClient.payments.create({
         amount: {
           currency: "EUR",
-          value: "37.00",
+          value: amountValue,
         },
         description: "7-Daagse Smoothie Challenge",
         redirectUrl: successUrl,

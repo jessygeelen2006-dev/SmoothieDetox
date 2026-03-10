@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Leaf, Droplets, Heart, CheckCircle, ArrowRight, AlertCircle, Clock, ShieldCheck } from 'lucide-react';
+import { Leaf, Droplets, Heart, CheckCircle, ArrowRight, AlertCircle, Clock, ShieldCheck, Gift, Star, Zap } from 'lucide-react';
 
 export default function SalesPage() {
   return (
@@ -18,35 +18,36 @@ export default function SalesPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      {/* Hero Section (The Hook) */}
+      <section className="pt-28 md:pt-32 pb-12 md:pb-20 px-4 md:px-6 bg-gradient-to-b from-stone-100 to-stone-50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-              <Clock className="w-4 h-4" /> Start: 14 maart
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 text-red-800 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider mb-6">
+              <Clock className="w-4 h-4" /> Groep start 14 maart - Beperkt plek
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-6 text-stone-900">
-              🚀 Reset je Metabolisme in 7 Dagen
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-medium leading-[1.1] mb-6 text-stone-900">
+              Voel Je Weer Thuis In Je Eigen Lichaam: <span className="text-primary-600 italic">Reset Je Metabolisme</span> In 7 Dagen
             </h1>
-            <p className="text-xl text-stone-800 font-medium mb-4 max-w-2xl mx-auto">
-              Hoe zou het zijn om je deze zomer geweldig te voelen én er zo uit te zien? In deze 7-daagse challenge leer je hoe je je metabolisme reset voor een zichtbaar plattere buik en meer energie.
-            </p>
-            <p className="text-lg text-stone-600 mb-8 leading-relaxed max-w-xl mx-auto">
-              Let op: de deuren sluiten zodra we beginnen – geen uitstel.
+            <p className="text-lg sm:text-xl text-stone-600 font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
+              Zonder hongerdiëten, zonder uren in de sportschool, en zonder je favoriete eten voor altijd op te geven. Ontdek de simpele methode om een hardnekkig opgeblazen buik en vermoeidheid aan te pakken.
             </p>
             
-            <div className="flex items-center justify-center mb-10">
-              <a href="/checkout" className="flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-                Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <a href="/checkout" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
+                Ja, ik doe mee op 14 maart <ArrowRight className="w-5 h-5" />
               </a>
+              <p className="text-sm text-stone-500 flex items-center justify-center gap-1">
+                <ShieldCheck className="w-4 h-4" /> 100% Resultaat Garantie
+              </p>
             </div>
 
-            <div className="flex justify-center gap-6 md:gap-12 mb-10">
-              <div className="w-48 md:w-56 bg-white p-2 md:p-3 rounded-2xl shadow-lg rotate-[-2deg] hover:rotate-0 transition-transform duration-300 border border-stone-100">
+            {/* Social Proof Teaser */}
+            <div className="flex justify-center gap-4 sm:gap-6 md:gap-12 mb-10">
+              <div className="w-36 sm:w-48 md:w-56 bg-white p-2 md:p-3 rounded-2xl shadow-lg rotate-[-2deg] hover:rotate-0 transition-transform duration-300 border border-stone-100">
                 <div className="aspect-[3/4] rounded-xl overflow-hidden mb-3">
                   <img 
                     src="https://i.ibb.co/kgH4cV5V/a982e86c-6a36-44a8-8fff-4db40e8f2545.jpg" 
@@ -55,9 +56,9 @@ export default function SalesPage() {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <p className="text-xs font-bold text-stone-400 uppercase tracking-wider text-center">Na 7 Dagen</p>
+                <p className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-wider text-center">Na 7 Dagen</p>
               </div>
-              <div className="w-48 md:w-56 bg-white p-2 md:p-3 rounded-2xl shadow-lg rotate-[2deg] hover:rotate-0 transition-transform duration-300 border border-stone-100">
+              <div className="w-36 sm:w-48 md:w-56 bg-white p-2 md:p-3 rounded-2xl shadow-lg rotate-[2deg] hover:rotate-0 transition-transform duration-300 border border-stone-100">
                 <div className="aspect-[3/4] rounded-xl overflow-hidden mb-3">
                   <img 
                     src="https://i.ibb.co/qMfFds89/9bd31f2e-e644-4eb5-9fe2-fa212c4bed84.jpg" 
@@ -66,264 +67,227 @@ export default function SalesPage() {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <p className="text-xs font-bold text-stone-400 uppercase tracking-wider text-center">Na 7 Dagen</p>
+                <p className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-wider text-center">Na 7 Dagen</p>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Attention Section */}
-      <section className="py-16 bg-white border-y border-stone-100">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="bg-primary-50 p-8 rounded-3xl border border-primary-100">
-            <h3 className="text-2xl font-bold mb-6 text-stone-900">Herken je dit?</h3>
-            <div className="space-y-4 text-lg text-stone-700">
-              <p>Je buik voelt vaak opgeblazen, zelfs als je “gezond” eet.</p>
-              <p>Je hebt het gevoel dat je metabolisme traag is.</p>
-              <p>Je bent eerlijk gezegd klaar met dure, mislukte afvalprogramma’s die niets doen.</p>
-              <p className="font-bold pt-4">Dan is dit voor jou.</p>
+      {/* Problem & Agitation (PAS) */}
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 md:px-6">
+          <h2 className="text-2xl sm:text-3xl font-serif font-medium mb-8 md:mb-10 text-stone-900 text-center">
+            Klinkt dit pijnlijk herkenbaar?
+          </h2>
+          
+          <div className="space-y-6">
+            <div className="flex gap-4 items-start">
+              <div className="bg-red-100 p-2 rounded-full text-red-600 mt-1 flex-shrink-0">
+                <AlertCircle className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-stone-900 mb-2">Je doet alles "goed", maar ziet geen resultaat</h3>
+                <p className="text-stone-600 leading-relaxed text-sm sm:text-base">Je let op je porties, je probeert gezond te eten, en je drinkt voldoende water. Toch lijkt die weegschaal muurvast te staan en voelt je kleding strak aan.</p>
+              </div>
             </div>
+            
+            <div className="flex gap-4 items-start">
+              <div className="bg-red-100 p-2 rounded-full text-red-600 mt-1 flex-shrink-0">
+                <AlertCircle className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-stone-900 mb-2">De beruchte "opgeblazen buik"</h3>
+                <p className="text-stone-600 leading-relaxed text-sm sm:text-base">Aan het begin van de dag gaat het nog wel, maar naarmate de dag vordert, zwelt je buik op. Het is oncomfortabel, frustrerend en het maakt je onzeker.</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start">
+              <div className="bg-red-100 p-2 rounded-full text-red-600 mt-1 flex-shrink-0">
+                <AlertCircle className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-stone-900 mb-2">Constante vermoeidheid & sugar cravings</h3>
+                <p className="text-stone-600 leading-relaxed text-sm sm:text-base">Rond 15:00 uur stort je in. Je hebt koffie of suiker nodig om de dag door te komen. Je wordt moe wakker, zelfs na 8 uur slaap.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 md:mt-12 bg-stone-100 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-stone-200">
+            <h3 className="text-xl sm:text-2xl font-serif font-medium mb-3 md:mb-4 text-stone-900">Het is niet jouw schuld.</h3>
+            <p className="text-base sm:text-lg text-stone-700 leading-relaxed">
+              Jarenlang hebben we geleerd dat we "minder moeten eten en meer moeten bewegen". Maar als je spijsvertering overbelast is en je metabolisme vastzit in de suikerverbrandings-stand, werkt geen enkel dieet. Je vecht dan letterlijk tegen je eigen biologie.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Interest Section */}
-      <section className="py-20 bg-stone-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-medium mb-6 text-stone-900">De logica achter deze methode</h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto mb-8">
-              Ontwikkeld door voedingsdeskundige Dr. Roy de Jong, die hiermee al honderden mensen heeft geholpen. Geen magie, gewoon biologie.
+      {/* Solution (The Unique Mechanism) */}
+      <section className="py-16 md:py-20 bg-stone-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium mb-4 md:mb-6">
+              De Oplossing: <span className="text-primary-400 italic">Digestive Rest</span> & Metabolische Reset
+            </h2>
+            <p className="text-lg sm:text-xl text-stone-300 max-w-2xl mx-auto">
+              Ontwikkeld door Dr. Roy de Jong. Geen magie, gewoon keiharde biologie.
             </p>
           </div>
 
-          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-stone-100">
-            <h3 className="text-2xl font-bold mb-6 text-stone-900">Hoe het werkt (simpel uitgelegd)</h3>
-            <div className="space-y-4 text-stone-700 text-lg leading-relaxed">
-                <p>
-                    Normaal gesproken haalt je lichaam energie uit de suikers in je voeding. Zolang je die blijft eten, spreekt je lichaam je vetreserves niet aan.
-                </p>
-                <p>
-                    Tijdens deze 7 dagen verlaag je je suikerinname drastisch. Hierdoor dwing je je lichaam om een andere energiebron te zoeken: je lichaamsvet.
-                </p>
-                <p>
-                    Tegelijkertijd krijgen je darmen rust omdat smoothies vloeibaar zijn en makkelijk verteren. Dit zorgt ervoor dat je buik minder opgeblazen is.
-                </p>
-                <p className="font-bold pt-2">
-                    Kortom: Minder suiker + makkelijke vertering = vetverbranding en een plattere buik.
-                </p>
+          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+            <div className="space-y-8 order-2 md:order-1">
+              <div className="flex gap-4">
+                <div className="bg-stone-800 p-3 rounded-xl text-primary-400 h-fit flex-shrink-0">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">1. Spijsverteringsrust</h3>
+                  <p className="text-stone-400 leading-relaxed text-sm sm:text-base">
+                    Door 7 dagen lang specifieke, vloeibare voeding (smoothies) te consumeren, hoeft je maag-darmstelsel nauwelijks moeite te doen. Dit geeft je lichaam de energie terug die normaal naar vertering gaat, waardoor ontstekingen en een opgeblazen gevoel verdwijnen.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <div className="bg-stone-800 p-3 rounded-xl text-primary-400 h-fit flex-shrink-0">
+                  <Droplets className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">2. De Vetverbrandings-Switch</h3>
+                  <p className="text-stone-400 leading-relaxed text-sm sm:text-base">
+                    De recepten zijn zó samengesteld dat ze je bloedsuikerspiegel stabiliseren. Je lichaam wordt gedwongen om over te schakelen van suikerverbranding naar het aanspreken van opgeslagen vetreserves.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative order-1 md:order-2 px-6 md:px-0">
+              <div className="absolute inset-0 bg-primary-500/20 blur-3xl rounded-full"></div>
+              <img 
+                src="https://i.ibb.co/kVsSZ55x/grok-image-966a5c19-a89a-4cfa-a8bc-adc4c0007baf-removebg-preview-1.png" 
+                alt="Smoothie Detox Receptenboek" 
+                className="relative z-10 w-full max-w-sm mx-auto h-auto drop-shadow-2xl"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Stacking (Justifying the Price) */}
+      <section className="py-16 md:py-24 bg-stone-50">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium mb-4 md:mb-6 text-stone-900">
+              Wat je precies krijgt als je vandaag instapt
+            </h2>
+            <p className="text-base sm:text-lg text-stone-600">Alles wat je nodig hebt voor gegarandeerd resultaat, zonder het giswerk.</p>
+          </div>
+
+          <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-stone-100 overflow-hidden">
+            <div className="p-6 md:p-10 space-y-6">
+              
+              {/* Item 1 */}
+              <div className="flex items-start gap-3 sm:gap-4 pb-6 border-b border-stone-100">
+                <div className="bg-primary-100 p-2 sm:p-3 rounded-xl text-primary-600 mt-1 flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1 sm:mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-stone-900">Het 7-Dagen Reset Protocol</h3>
+                    <span className="text-stone-400 line-through text-xs sm:text-sm mt-1 sm:mt-0">Waarde €97</span>
+                  </div>
+                  <p className="text-stone-600 text-sm sm:text-base">Het complete, stap-voor-stap schema met de exacte, vullende smoothie-recepten die je metabolisme herstarten. Geen honger, wel resultaat.</p>
+                </div>
+              </div>
+
+              {/* Item 2 */}
+              <div className="flex items-start gap-3 sm:gap-4 pb-6 border-b border-stone-100">
+                <div className="bg-primary-100 p-2 sm:p-3 rounded-xl text-primary-600 mt-1 flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1 sm:mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-stone-900">Kant-en-klare Boodschappenlijsten</h3>
+                    <span className="text-stone-400 line-through text-xs sm:text-sm mt-1 sm:mt-0">Waarde €27</span>
+                  </div>
+                  <p className="text-stone-600 text-sm sm:text-base">Bespaar tijd en geld in de supermarkt. Je weet precies wat je moet halen voor de hele week. Alle ingrediënten zijn gewoon bij de lokale supermarkt te vinden.</p>
+                </div>
+              </div>
+
+              {/* Item 3 */}
+              <div className="flex items-start gap-3 sm:gap-4 pb-6 border-b border-stone-100">
+                <div className="bg-primary-100 p-2 sm:p-3 rounded-xl text-primary-600 mt-1 flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1 sm:mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-stone-900">De 'Na De Reset' Handleiding</h3>
+                    <span className="text-stone-400 line-through text-xs sm:text-sm mt-1 sm:mt-0">Waarde €47</span>
+                  </div>
+                  <p className="text-stone-600 text-sm sm:text-base">Het grootste probleem met diëten is het jojo-effect. Met deze gids leer je precies hoe je na de 7 dagen je resultaat behoudt en weer normaal, gezond kunt eten.</p>
+                </div>
+              </div>
+
+              {/* Item 4 */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="bg-primary-100 p-2 sm:p-3 rounded-xl text-primary-600 mt-1 flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1 sm:mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-stone-900">Dagelijkse Begeleiding & Motivatie</h3>
+                    <span className="text-stone-400 line-through text-xs sm:text-sm mt-1 sm:mt-0">Waarde €47</span>
+                  </div>
+                  <p className="text-stone-600 text-sm sm:text-base">Je doet dit niet alleen. Elke dag van de challenge krijg je precies te horen wat je kunt verwachten, wat er in je lichaam gebeurt en hoe je gemotiveerd blijft.</p>
+                </div>
+              </div>
+
             </div>
             
-            <div className="mt-10 text-center">
-              <a href="/checkout" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-                Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
+            <div className="bg-stone-900 p-6 sm:p-8 md:p-10 text-white text-center">
+              <div className="mb-4">
+                <span className="text-stone-400 text-base sm:text-lg">Totale Waarde: <span className="line-through">€218,00</span></span>
+              </div>
+              <div className="mb-6 sm:mb-8">
+                <span className="text-stone-300 text-lg sm:text-xl">Jouw Investering Vandaag:</span>
+                <div className="text-5xl sm:text-6xl font-bold text-primary-400 mt-2">€97</div>
+              </div>
+              <a href="/checkout" className="inline-flex items-center justify-center gap-2 w-full md:w-auto bg-primary-500 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold text-lg sm:text-xl hover:bg-primary-600 transition-all shadow-lg shadow-primary-500/30 transform hover:-translate-y-1">
+                Ja, ik wil direct toegang <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Internal Dialogue Section (formerly 3x JA Ladder) */}
-      {/* Removed as requested in the new copy structure */}
-
-      {/* Desire / What You Get */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Image Side */}
-            <div className="order-2 md:order-1 relative">
-              <div className="absolute inset-0 bg-primary-100/50 blur-3xl rounded-full transform scale-90 translate-y-4 -z-10"></div>
-              <div className="relative z-10 transform transition-transform duration-500 hover:scale-[1.02]">
-                <img 
-                  src="https://i.ibb.co/kVsSZ55x/grok-image-966a5c19-a89a-4cfa-a8bc-adc4c0007baf-removebg-preview-1.png" 
-                  alt="Smoothie Detox Receptenboek" 
-                  className="w-full h-auto drop-shadow-2xl rotate-1"
-                  referrerPolicy="no-referrer"
-                />
-                {/* Floating Badge */}
-                <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-stone-100 max-w-[200px] hidden md:block">
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="flex -space-x-2">
-                      <div className="w-8 h-8 rounded-full bg-stone-200 border-2 border-white overflow-hidden">
-                        <img src="https://i.pravatar.cc/100?img=1" alt="" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="w-8 h-8 rounded-full bg-stone-200 border-2 border-white overflow-hidden">
-                        <img src="https://i.pravatar.cc/100?img=5" alt="" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="w-8 h-8 rounded-full bg-stone-200 border-2 border-white overflow-hidden">
-                        <img src="https://i.pravatar.cc/100?img=9" alt="" className="w-full h-full object-cover" />
-                      </div>
-                    </div>
-                    <span className="text-xs font-bold text-stone-600">+1.200 anderen</span>
-                  </div>
-                  <p className="text-xs text-stone-500">Gingen je al voor</p>
-                </div>
+              <div className="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm text-stone-400">
+                <ShieldCheck className="w-4 h-4" /> 14 Dagen 'Niet Goed, Geld Terug' Garantie
               </div>
             </div>
-
-            {/* Content Side */}
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4 text-stone-900 leading-tight">
-                Ervaar de rust van een plan dat <span className="italic text-primary-600">écht voor je werkt</span>
-              </h2>
-              <p className="text-lg text-stone-600 mb-10">
-                Geen stress, geen honger, alleen resultaat. Dit is hoe jouw week eruit gaat zien:
-              </p>
-              
-              <div className="space-y-6">
-                {/* Card 1 */}
-                <div className="flex gap-5 p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-primary-200 transition-colors group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary-500 group-hover:scale-110 transition-transform">
-                    <Heart className="w-6 h-6 fill-current" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-stone-900 mb-2">Elke dag een genietmomentje</h3>
-                    <p className="text-stone-600 leading-relaxed">
-                      Vergeet vieze detox-drankjes. Je krijgt 7 heerlijke, vullende smoothies die voelen als een traktatie, terwijl ze je lichaam van binnenuit reinigen. Gewoon met ingrediënten uit je eigen supermarkt.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="flex gap-5 p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-primary-200 transition-colors group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary-500 group-hover:scale-110 transition-transform">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-stone-900 mb-2">Volledige mentale rust</h3>
-                    <p className="text-stone-600 leading-relaxed">
-                      Stop met piekeren over wat je wel of niet mag eten. Je krijgt een kristalhelder dag-tot-dag schema dat precies vertelt wat je moet doen. Jij hoeft alleen maar te volgen en te genieten van het resultaat.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why it works / Comparison */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-bold text-red-500 mb-6">Waarom de meeste programma's falen</h3>
-              <ul className="space-y-4">
-                {[
-                  "Te extreem",
-                  "Geen structuur",
-                  "Geen rekening met je metabolisme",
-                  "Niet vol te houden"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-stone-600">
-                    <div className="w-2 h-2 rounded-full bg-red-400"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-primary-600 mb-6">Onze aanpak:</h3>
-              <ul className="space-y-4">
-                {[
-                  "Kort (7 dagen)",
-                  "Duidelijk & praktisch",
-                  "Gericht op reset, niet restrictie"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-stone-800 font-medium">
-                    <CheckCircle className="w-5 h-5 text-primary-500" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="mt-12 text-center">
-            <p className="text-2xl font-serif italic text-stone-700 mb-10">"Dit is geen quick fix. Dit is een reset voor je lichaam."</p>
-            <a href="/checkout" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-              Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
-            </a>
           </div>
         </div>
       </section>
 
       {/* Social Proof */}
-      <section className="py-20 bg-stone-50 border-y border-stone-100">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-block bg-white px-4 py-2 rounded-full text-sm font-bold text-stone-500 mb-8 border border-stone-200">
-            De vorige groep was volledig uitverkocht
+      <section className="py-16 md:py-20 bg-white border-y border-stone-100">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
+          <div className="flex justify-center mb-4 md:mb-6 text-yellow-400">
+            <Star className="w-5 h-5 md:w-6 md:h-6 fill-current" />
+            <Star className="w-5 h-5 md:w-6 md:h-6 fill-current" />
+            <Star className="w-5 h-5 md:w-6 md:h-6 fill-current" />
+            <Star className="w-5 h-5 md:w-6 md:h-6 fill-current" />
+            <Star className="w-5 h-5 md:w-6 md:h-6 fill-current" />
           </div>
+          <h2 className="text-2xl sm:text-3xl font-serif font-medium mb-8 md:mb-12 text-stone-900">Meer dan 1.200 vrouwen gingen je voor</h2>
           
-          <h2 className="text-3xl font-serif font-medium mb-12 text-stone-900">Wat deelnemers zeggen:</h2>
-          
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
             {[
-              "Mijn buik voelde na 4 dagen al lichter.",
-              "Ik had veel minder cravings.",
-              "Eindelijk iets wat simpel te volgen is.",
-              "Ik voelde me energieker zonder honger."
+              "Mijn buik voelde na 4 dagen al lichter. Eindelijk een methode die niet voelt als uithongeren.",
+              "Ik had veel minder cravings. De smoothies zijn verrassend vullend en lekker.",
+              "Eindelijk iets wat simpel te volgen is. Geen ingewikkelde recepten of uren in de keuken.",
+              "Ik voelde me energieker en mijn kleding zit weer comfortabel. Een absolute aanrader!"
             ].map((quote, i) => (
-              <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 italic text-stone-600">
-                "{quote}"
+              <div key={i} className="bg-stone-50 p-6 md:p-8 rounded-2xl shadow-sm border border-stone-100 italic text-stone-600 text-left relative">
+                <span className="absolute top-2 left-3 md:top-4 md:left-4 text-4xl text-stone-200 font-serif">"</span>
+                <p className="relative z-10 pt-4 text-sm md:text-base">{quote}</p>
               </div>
             ))}
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl border border-stone-100 max-w-2xl mx-auto">
-            <h3 className="font-bold mb-4 text-stone-900">Veel deelnemers ervaren:</h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="flex items-center gap-2 text-stone-700"><CheckCircle className="w-4 h-4 text-primary-500" /> Minder opgeblazen gevoel</span>
-              <span className="flex items-center gap-2 text-stone-700"><CheckCircle className="w-4 h-4 text-primary-500" /> Strakker gevoel in kleding</span>
-              <span className="flex items-center gap-2 text-stone-700"><CheckCircle className="w-4 h-4 text-primary-500" /> Meer controle over hun eetpatroon</span>
-            </div>
-            <p className="mt-6 font-bold text-primary-700">En het allerbelangrijkste: ze houden het vol.</p>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <a href="/checkout" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1">
-              Ja, ik wil mijn plek voor 14 maart! <ArrowRight className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Urgency & Action */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="mb-12">
-            <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full font-bold mb-6">
-              <Clock className="w-5 h-5" /> Start 14 maart – de deuren sluiten daarna
-            </div>
-            <h2 className="text-3xl font-serif font-medium mb-6 text-stone-900">Dit is een begeleide start, dus geen doorlopende instroom.</h2>
-            <p className="text-lg text-stone-600">Wil je echt mee? Dan is dit je moment.</p>
-          </div>
-
-          <div className="bg-stone-900 text-white p-8 md:p-12 rounded-3xl shadow-xl mb-12">
-            <h3 className="text-2xl font-bold mb-6">Reserveer mijn plek voor 14 maart</h3>
-            <div className="space-y-4 mb-8 text-stone-300">
-              <p>Over 7 dagen kun je:</p>
-              <div className="grid md:grid-cols-2 gap-4 text-left">
-                <div className="bg-stone-800 p-4 rounded-xl border border-stone-700">
-                  <span className="block text-xs uppercase tracking-wider text-stone-500 mb-1">Optie 1</span>
-                  Nog steeds zoeken naar het volgende “wonderdieet”.
-                </div>
-                <div className="bg-stone-800 p-4 rounded-xl border border-stone-700 border-l-4 border-l-primary-500">
-                  <span className="block text-xs uppercase tracking-wider text-primary-400 mb-1">Optie 2</span>
-                  Terugkijken en blij zijn dat je je metabolisme een reset gaf.
-                </div>
-              </div>
-            </div>
-            <a href="/checkout" className="w-full block bg-primary-500 text-white px-8 py-4 rounded-2xl font-bold text-xl hover:bg-primary-600 transition-all shadow-lg shadow-primary-900/20 hover:shadow-primary-900/40 transform hover:-translate-y-1">
-              Ja, ik start 14 maart met het 7-Daagse Smoothie Dieet
-            </a>
-          </div>
-
-          <div className="flex flex-col items-center justify-center gap-4 text-stone-500 text-sm">
-             <div className="flex items-center gap-2 font-bold text-stone-700">
-               <ShieldCheck className="w-5 h-5" /> Risicoloos
-             </div>
-            <span>14 dagen garantie: voel je geen verschil? Dan krijg je je geld terug, zonder discussie.</span>
           </div>
         </div>
       </section>
