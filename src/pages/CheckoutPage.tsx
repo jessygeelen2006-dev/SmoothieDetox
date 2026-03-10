@@ -119,7 +119,7 @@ export default function CheckoutPage() {
                       <input type="radio" name="paymentMethod" value="ideal" className="hidden" checked={paymentMethod === 'ideal'} onChange={() => setPaymentMethod('ideal')} />
                       <span className="font-medium text-stone-900">iDEAL</span>
                     </div>
-                    <img src="https://www.ideal.nl/img/logo/ideal-logo-1024.png" alt="iDEAL" className="h-6 object-contain" />
+                    <img src="https://d1twnm33rljaon.cloudfront.net/iDEAL_Wero_Lockup_Yellow_Horizontal_RGB.png" alt="iDEAL" className="h-6 object-contain" />
                   </label>
 
                   <label className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${paymentMethod === 'bancontact' ? 'border-primary-500 bg-primary-50' : 'border-stone-200 hover:border-stone-300'}`}>
@@ -130,7 +130,7 @@ export default function CheckoutPage() {
                       <input type="radio" name="paymentMethod" value="bancontact" className="hidden" checked={paymentMethod === 'bancontact'} onChange={() => setPaymentMethod('bancontact')} />
                       <span className="font-medium text-stone-900">Bancontact</span>
                     </div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Bancontact_logo.svg/1024px-Bancontact_logo.svg.png" alt="Bancontact" className="h-6 object-contain" />
+                    <img src="https://www.pyroservice.eu/cdn/shop/files/6.webp?v=1765380994&width=1445" alt="Bancontact" className="h-6 object-contain" />
                   </label>
                 </div>
               </section>
