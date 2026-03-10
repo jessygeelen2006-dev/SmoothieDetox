@@ -35,7 +35,7 @@ export default function CheckoutPage() {
         result = await response.json();
       } else {
         const text = await response.text();
-        throw new Error(`Server gaf een ongeldig antwoord: ${text}`);
+        throw new Error(`Server fout (${response.status} ${response.statusText}): ${text || 'Geen inhoud'}`);
       }
 
       if (!response.ok) {
