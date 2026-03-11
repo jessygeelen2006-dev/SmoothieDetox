@@ -3,6 +3,8 @@ import SalesPage from './pages/SalesPage';
 import ThreeRecipesPage from './pages/ThreeRecipesPage';
 import CheckoutPage from './pages/CheckoutPage';
 import SuccessPage from './pages/SuccessPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 export default function App() {
   return (
@@ -12,6 +14,8 @@ export default function App() {
         <Route path="/3-recepten" element={<ThreeRecipesPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/success" element={<SuccessPage />} />
+        <Route path="/algemene-voorwaarden" element={<TermsPage />} />
+        <Route path="/privacy-beleid" element={<PrivacyPage />} />
       </Routes>
     </Router>
   );

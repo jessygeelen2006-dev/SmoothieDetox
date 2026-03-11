@@ -1,25 +1,10 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
-import { ShieldCheck, Lock, CheckCircle, ArrowRight, CreditCard, Loader2 } from 'lucide-react';
+import { Lock, Loader2, ShieldCheck } from 'lucide-react';
 
 export default function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = useState('ideal');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [discountCode, setDiscountCode] = useState('');
-  const [discountApplied, setDiscountApplied] = useState(false);
-  const [discountError, setDiscountError] = useState('');
-
-  const handleApplyDiscount = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (discountCode.trim().toUpperCase() === 'MANGO') {
-      setDiscountApplied(true);
-      setDiscountError('');
-    } else {
-      setDiscountApplied(false);
-      setDiscountError('Ongeldige kortingscode');
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +17,6 @@ export default function CheckoutPage() {
       lastName: formData.get('lastName'),
       email: formData.get('email'),
       method: paymentMethod,
-      discountCode: discountApplied ? 'MANGO' : undefined,
     };
 
     try {
@@ -70,23 +54,23 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-stone-50 font-sans text-stone-800 selection:bg-primary-200 py-6 md:py-12">
-      <div className="max-w-5xl mx-auto px-4 md:px-6">
+      <div className="max-w-3xl mx-auto px-4 md:px-6">
         
         {/* Header - Minimal */}
-        <div className="flex justify-center mb-8 md:mb-12">
+        <div className="flex justify-center mb-8">
           <img 
             src="https://i.ibb.co/ZpBRMcdB/logo.jpg" 
-            alt="Smoothie Detox" 
-            className="h-10 md:h-12 w-auto"
+            alt="SmoothieBijbel" 
+            className="h-8 md:h-10 w-auto"
             referrerPolicy="no-referrer"
           />
         </div>
 
-        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <div className="grid md:grid-cols-12 gap-8 items-start">
           
           {/* Left Column - Checkout Form */}
           <div className="md:col-span-7 bg-white p-5 sm:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-stone-100">
-            <h1 className="text-xl sm:text-2xl font-serif font-medium mb-6 text-stone-900">Rond je aanmelding af</h1>
+            <h1 className="text-xl sm:text-2xl font-serif font-bold mb-6 text-stone-900">Afrekenen</h1>
             
             {error && (
               <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-xl border border-red-100 text-sm">
@@ -94,38 +78,29 @@ export default function CheckoutPage() {
               </div>
             )}
 
-            <form className="space-y-8" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Contact Info */}
               <section>
-                <h2 className="text-base sm:text-lg font-bold text-stone-900 mb-4 flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-sm">1</span>
-                  Jouw gegevens
-                </h2>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <h2 className="text-sm font-bold text-stone-900 mb-3 uppercase tracking-wider text-stone-500">1. Jouw gegevens</h2>
+                <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-sm font-medium text-stone-700 mb-1">Voornaam</label>
-                      <input type="text" name="firstName" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Bijv. Sarah" required />
+                      <input type="text" name="firstName" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-stone-50" placeholder="Voornaam" required />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-stone-700 mb-1">Achternaam</label>
-                      <input type="text" name="lastName" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Bijv. de Vries" required />
+                      <input type="text" name="lastName" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-stone-50" placeholder="Achternaam" required />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-stone-700 mb-1">E-mailadres</label>
-                    <input type="email" name="email" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Waar mogen we het schema heen sturen?" required />
+                    <input type="email" name="email" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-stone-50" placeholder="E-mailadres (voor het e-book)" required />
                   </div>
                 </div>
               </section>
 
               {/* Payment Method */}
               <section>
-                <h2 className="text-base sm:text-lg font-bold text-stone-900 mb-4 flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-sm">2</span>
-                  Kies je betaalmethode
-                </h2>
-                <div className="space-y-3">
+                <h2 className="text-sm font-bold text-stone-900 mb-3 uppercase tracking-wider text-stone-500">2. Betaalmethode</h2>
+                <div className="space-y-2">
                   <label className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${paymentMethod === 'ideal' ? 'border-primary-500 bg-primary-50' : 'border-stone-200 hover:border-stone-300'}`}>
                     <div className="flex items-center gap-3">
                       <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentMethod === 'ideal' ? 'border-primary-500' : 'border-stone-300'}`}>
@@ -134,7 +109,7 @@ export default function CheckoutPage() {
                       <input type="radio" name="paymentMethod" value="ideal" className="hidden" checked={paymentMethod === 'ideal'} onChange={() => setPaymentMethod('ideal')} />
                       <span className="font-medium text-stone-900">iDEAL</span>
                     </div>
-                    <img src="https://d1twnm33rljaon.cloudfront.net/iDEAL_Wero_Lockup_Yellow_Horizontal_RGB.png" alt="iDEAL" className="h-5 sm:h-6 object-contain" />
+                    <img src="https://d1twnm33rljaon.cloudfront.net/iDEAL_Wero_Lockup_Yellow_Horizontal_RGB.png" alt="iDEAL" className="h-5 object-contain" />
                   </label>
 
                   <label className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${paymentMethod === 'bancontact' ? 'border-primary-500 bg-primary-50' : 'border-stone-200 hover:border-stone-300'}`}>
@@ -145,25 +120,22 @@ export default function CheckoutPage() {
                       <input type="radio" name="paymentMethod" value="bancontact" className="hidden" checked={paymentMethod === 'bancontact'} onChange={() => setPaymentMethod('bancontact')} />
                       <span className="font-medium text-stone-900">Bancontact</span>
                     </div>
-                    <img src="https://www.pyroservice.eu/cdn/shop/files/6.webp?v=1765380994&width=1445" alt="Bancontact" className="h-5 sm:h-6 object-contain" />
+                    <img src="https://www.pyroservice.eu/cdn/shop/files/6.webp?v=1765380994&width=1445" alt="Bancontact" className="h-5 object-contain" />
                   </label>
                 </div>
               </section>
 
               {/* Submit Button */}
-              <div className="pt-4">
-                <button type="submit" disabled={isLoading} className="w-full flex items-center justify-center gap-2 bg-primary-500 text-white px-6 sm:px-8 py-4 rounded-2xl font-bold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 hover:shadow-primary-300 transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none">
+              <div className="pt-2">
+                <button type="submit" disabled={isLoading} className="w-full flex items-center justify-center gap-2 bg-primary-500 text-white px-6 py-4 rounded-xl font-bold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">
                   {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Lock className="w-5 h-5" />} 
-                  {isLoading ? 'Bezig met laden...' : 'Veilig Afrekenen'}
+                  {isLoading ? 'Bezig met laden...' : 'Betaal €9,95'}
                 </button>
-                <p className="text-center text-xs sm:text-sm text-stone-500 mt-4 flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-4 h-4" /> Je betaling wordt veilig verwerkt
-                </p>
               </div>
             </form>
           </div>
 
-          {/* Right Column - Order Summary & Trust */}
+          {/* Right Column - Order Summary */}
           <div className="md:col-span-5 space-y-6">
             
             {/* Summary Card */}
@@ -171,126 +143,45 @@ export default function CheckoutPage() {
               <h3 className="text-lg font-bold text-stone-900 mb-4">Jouw Bestelling</h3>
               
               <div className="flex gap-4 mb-6">
-                <div className="w-16 h-20 sm:w-20 sm:h-24 bg-stone-100 rounded-lg overflow-hidden flex-shrink-0">
+                <div className="w-16 h-20 bg-stone-100 rounded-lg overflow-hidden flex-shrink-0">
                   <img 
                     src="https://i.ibb.co/kVsSZ55x/grok-image-966a5c19-a89a-4cfa-a8bc-adc4c0007baf-removebg-preview-1.png" 
-                    alt="Smoothie Detox" 
+                    alt="SmoothieBijbel" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
                 </div>
                 <div>
-                  <h4 className="font-bold text-stone-900 text-sm sm:text-base">7-Daagse Smoothie Reset</h4>
-                  <p className="text-xs sm:text-sm text-stone-500 mt-1">Start: 14 maart</p>
-                  <p className="text-xs sm:text-sm text-stone-500">Inclusief alle bonussen</p>
+                  <h4 className="font-bold text-stone-900">De SmoothieBijbel</h4>
+                  <p className="text-xs text-stone-500 mt-1">100 Recepten E-book</p>
+                  <p className="text-xs text-stone-500">Directe download</p>
                 </div>
               </div>
 
-              <div className="border-t border-stone-100 pt-4 space-y-3">
+              <div className="border-t border-stone-100 pt-4 space-y-2">
                 <div className="flex justify-between text-stone-600 text-sm">
-                  <span>Het 7-Dagen Reset Protocol</span>
-                  <span>Waarde €97</span>
+                  <span>Subtotaal</span>
+                  <span>€ 9,95</span>
                 </div>
-                <div className="flex justify-between text-stone-600 text-sm">
-                  <span>Kant-en-klare Boodschappenlijsten</span>
-                  <span>Waarde €27</span>
-                </div>
-                <div className="flex justify-between text-stone-600 text-sm">
-                  <span>De 'Na De Reset' Handleiding</span>
-                  <span>Waarde €47</span>
-                </div>
-                <div className="flex justify-between text-stone-600 text-sm">
-                  <span>Dagelijkse Begeleiding</span>
-                  <span>Waarde €47</span>
-                </div>
-                
-                <div className="pt-3 border-t border-stone-100">
-                  <div className="flex justify-between text-stone-400 text-sm mb-1">
-                    <span>Totale Waarde</span>
-                    <span className="line-through">€218,00</span>
-                  </div>
-                  <div className="flex justify-between text-stone-900 font-medium">
-                    <span>Jouw Prijs Vandaag</span>
-                    <span>€ 97,00</span>
-                  </div>
-                </div>
-
-                {discountApplied && (
-                  <div className="flex justify-between text-green-600 font-medium">
-                    <span>Korting (MANGO)</span>
-                    <span>- € 7,00</span>
-                  </div>
-                )}
-                <div className="flex justify-between font-bold text-xl text-stone-900 pt-3 border-t border-stone-100">
-                  <span>Totaal te betalen</span>
-                  <span>€ {discountApplied ? '90,00' : '97,00'}</span>
-                </div>
-              </div>
-
-              {/* Discount Code Section */}
-              <div className="mt-4 pt-4 border-t border-stone-100">
-                <label className="block text-sm font-medium text-stone-700 mb-2">Kortingscode</label>
-                <div className="flex gap-2">
-                  <input 
-                    type="text" 
-                    value={discountCode}
-                    onChange={(e) => setDiscountCode(e.target.value)}
-                    className="flex-1 px-4 py-2 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all uppercase" 
-                    placeholder="Vul code in"
-                    disabled={discountApplied}
-                  />
-                  <button 
-                    onClick={handleApplyDiscount}
-                    disabled={discountApplied || !discountCode}
-                    className="px-4 py-2 bg-stone-100 text-stone-700 rounded-xl font-medium hover:bg-stone-200 transition-all disabled:opacity-50"
-                  >
-                    {discountApplied ? 'Toegepast' : 'Toepassen'}
-                  </button>
-                </div>
-                {discountError && <p className="text-red-500 text-sm mt-1">{discountError}</p>}
-                <p className="text-xs text-stone-400 mt-2 italic">Gebruik kortingscode "MANGO" voor 7 euro korting.</p>
-              </div>
-            </div>
-
-            {/* Trust & Guarantee */}
-            <div className="bg-stone-900 text-white p-5 sm:p-6 rounded-2xl md:rounded-3xl shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="bg-stone-800 p-3 rounded-full text-primary-400 flex-shrink-0">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-base sm:text-lg mb-1">14 Dagen Bedenktijd</h4>
-                  <p className="text-stone-400 text-xs sm:text-sm leading-relaxed">
-                    Je kunt altijd nog van gedachten veranderen. Ben je toch niet tevreden of is het niet wat je zocht? Stuur ons binnen 14 dagen een mailtje en je krijgt direct je aankoopbedrag terug. Zonder gedoe.
-                  </p>
+                <div className="flex justify-between font-bold text-lg text-stone-900 pt-2 border-t border-stone-100">
+                  <span>Totaal</span>
+                  <span>€ 9,95</span>
                 </div>
               </div>
             </div>
 
-            {/* Authority / Social Proof */}
-            <div className="bg-white p-5 sm:p-6 rounded-2xl md:rounded-3xl shadow-sm border border-stone-100">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-stone-200 border-2 border-white overflow-hidden">
-                    <img src="https://i.pravatar.cc/100?img=1" alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-stone-200 border-2 border-white overflow-hidden">
-                    <img src="https://i.pravatar.cc/100?img=5" alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-stone-200 border-2 border-white overflow-hidden">
-                    <img src="https://i.pravatar.cc/100?img=9" alt="" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-                <div className="flex text-yellow-400">
-                  {"★★★★★".split("").map((star, i) => <span key={i}>{star}</span>)}
-                </div>
-              </div>
-              <p className="text-xs sm:text-sm text-stone-600 italic">
-                "Al meer dan 1.200 vrouwen gingen je voor en hebben hun metabolisme succesvol gereset met deze methode van Dr. Roy de Jong."
-              </p>
+            <div className="flex items-center justify-center gap-2 text-xs text-stone-500">
+              <ShieldCheck className="w-4 h-4 text-green-500" /> Veilig en versleuteld afrekenen
             </div>
 
           </div>
+        </div>
+
+        {/* Simple Footer for Checkout */}
+        <div className="mt-12 pt-8 border-t border-stone-200 text-center text-xs text-stone-400 flex flex-col md:flex-row justify-center items-center gap-4">
+          <a href="/algemene-voorwaarden" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Algemene Voorwaarden</a>
+          <span className="hidden md:inline">•</span>
+          <a href="/privacy-beleid" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Privacy Beleid</a>
         </div>
       </div>
     </div>

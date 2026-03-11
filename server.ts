@@ -72,14 +72,14 @@ async function startServer() {
 
       const mollieClient = createMollieClient({ apiKey });
 
-      const amountValue = discountCode === 'MANGO' ? "90.00" : "97.00";
+      const amountValue = "9.95";
 
       const payment = await mollieClient.payments.create({
         amount: {
           currency: "EUR",
           value: amountValue,
         },
-        description: "7-Daagse Smoothie Challenge",
+        description: "De SmoothieBijbel",
         redirectUrl: successUrl,
         method: method === "ideal" ? "ideal" : "bancontact",
         metadata: {
