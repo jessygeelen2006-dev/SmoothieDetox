@@ -7,7 +7,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { firstName, lastName, email, method, discountCode } = req.body;
+    const { email, method } = req.body;
     const apiKey = process.env.MOLLIE_API_KEY;
 
     // Try to get the base URL from VERCEL_URL or fallback to request headers
@@ -23,19 +23,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const mollieClient = createMollieClient({ apiKey });
 
-    const amountValue = discountCode === 'MANGO' ? "90.00" : "97.00";
+    const amountValue = "9.95";
 
     const payment = await mollieClient.payments.create({
       amount: {
         currency: "EUR",
         value: amountValue,
       },
-      description: "7-Daagse Smoothie Challenge",
+      description: "De SmoothieBijbel",
       redirectUrl: successUrl,
       method: method === "ideal" ? "ideal" : "bancontact",
       metadata: {
-        firstName,
-        lastName,
         email,
       },
     });
