@@ -76,13 +76,15 @@ export default function SalesPage() {
       {/* Footer */}
       <footer className="bg-stone-900 text-stone-400 py-8 px-4 mt-auto">
         <div className="max-w-md mx-auto flex flex-col items-center text-center gap-4">
-          <div className="flex gap-4 text-xs">
+          <div className="flex flex-wrap justify-center gap-4 text-xs">
             <a href="/algemene-voorwaarden" className="hover:text-white transition-colors">Voorwaarden</a>
             <a href="/privacy-beleid" className="hover:text-white transition-colors">Privacy</a>
+            <a href="/retourbeleid" className="hover:text-white transition-colors">Retourbeleid</a>
             <a href="mailto:info@portomedia.nl" className="hover:text-white transition-colors">Contact</a>
           </div>
-          <div className="text-xs opacity-60">
-            &copy; {new Date().getFullYear()} SmoothieBijbel.
+          <div className="text-xs opacity-60 space-y-1">
+            <p>Portomedia | Lijnbaanstraat 7 | KvK: 99880725</p>
+            <p className="mt-2">&copy; {new Date().getFullYear()} SmoothieBijbel.</p>
           </div>
         </div>
       </footer>

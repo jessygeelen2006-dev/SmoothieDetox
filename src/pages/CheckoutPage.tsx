@@ -13,8 +13,6 @@ export default function CheckoutPage() {
 
     const formData = new FormData(e.target as HTMLFormElement);
     const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
       email: formData.get('email'),
       method: paymentMethod,
     };
@@ -83,14 +81,6 @@ export default function CheckoutPage() {
               <section>
                 <h2 className="text-sm font-bold text-stone-900 mb-3 uppercase tracking-wider text-stone-500">1. Jouw gegevens</h2>
                 <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <input type="text" name="firstName" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-stone-50" placeholder="Voornaam" required />
-                    </div>
-                    <div>
-                      <input type="text" name="lastName" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-stone-50" placeholder="Achternaam" required />
-                    </div>
-                  </div>
                   <div>
                     <input type="email" name="email" className="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-stone-50" placeholder="E-mailadres (voor het e-book)" required />
                   </div>
@@ -178,10 +168,17 @@ export default function CheckoutPage() {
         </div>
 
         {/* Simple Footer for Checkout */}
-        <div className="mt-12 pt-8 border-t border-stone-200 text-center text-xs text-stone-400 flex flex-col md:flex-row justify-center items-center gap-4">
-          <a href="/algemene-voorwaarden" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Algemene Voorwaarden</a>
-          <span className="hidden md:inline">•</span>
-          <a href="/privacy-beleid" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Privacy Beleid</a>
+        <div className="mt-12 pt-8 border-t border-stone-200 text-center text-xs text-stone-400 flex flex-col items-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/algemene-voorwaarden" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Voorwaarden</a>
+            <a href="/privacy-beleid" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Privacy</a>
+            <a href="/retourbeleid" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Retourbeleid</a>
+            <a href="mailto:info@portomedia.nl" className="hover:text-stone-800 transition-colors" target="_blank" rel="noopener noreferrer">Contact</a>
+          </div>
+          <div className="space-y-1">
+            <p>Portomedia | Lijnbaanstraat 7 | KvK: 99880725</p>
+            <p className="mt-2">&copy; {new Date().getFullYear()} SmoothieBijbel.</p>
+          </div>
         </div>
       </div>
     </div>

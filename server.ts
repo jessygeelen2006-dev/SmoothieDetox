@@ -59,7 +59,7 @@ async function startServer() {
 
   app.post("/api/create-payment", async (req, res) => {
     try {
-      const { firstName, lastName, email, method, discountCode } = req.body;
+      const { email, method } = req.body;
       const apiKey = process.env.MOLLIE_API_KEY;
 
       const baseUrl = process.env.APP_URL || `${req.protocol}://${req.get("host")}`;
@@ -83,8 +83,6 @@ async function startServer() {
         redirectUrl: successUrl,
         method: method === "ideal" ? "ideal" : "bancontact",
         metadata: {
-          firstName,
-          lastName,
           email,
         },
       });

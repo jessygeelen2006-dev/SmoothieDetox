@@ -5,6 +5,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import SuccessPage from './pages/SuccessPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import RefundPage from './pages/RefundPage';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/success" element={<SuccessPage />} />
         <Route path="/algemene-voorwaarden" element={<TermsPage />} />
         <Route path="/privacy-beleid" element={<PrivacyPage />} />
+        <Route path="/retourbeleid" element={<RefundPage />} />
       </Routes>
     </Router>
   );
